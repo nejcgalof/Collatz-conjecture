@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Collatz problem</title>
+    <link rel="stylesheet" href="collatz.css">
+    <link rel="stylesheet" href="rangeslider.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/d3.min.js"></script>
+    <script src="js/d3.layout.min.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/rangeslider.min.js"></script> 
+  </head>
+  <body>
+  <h1>Collatz Graph: All Numbers Lead to One</h1>
+  <div id="content">
+    <div class="slider">
+        <br>
+        <input type="range" min="0" max="20">
+        <br>
+        <output></output>
+        <br>
+        <label>
+          <input type="number" name="min" value="0"> <code>min</code>
+        </label>
+        <br>
+        <label>
+          <input type="number" name="max" value="20"> <code>max</code>
+        </label>
+        <br>
+        <label>
+          <input type="number" name="step" value="1"> <code>step</code>
+        </label>
+        <br>
+        <br>
+        <button id="js-example-change-attributes">Change attributes</button>
+        <script src="js/rangeslider.work.js"></script>
+    </div>
+    <p><label for="level">Orbit length</label>: <span id="level"></span> <span id="level-val">1</span>
+    <p><input type="button" value="Play" id="play">
+    <p><input type="button" value="Stop" id="stop" style="display: none">
+  </div>
+  <div id="vis">
+    <script src="collatz.js"></script>
+    <script src="collatz-ui.js"></script>
+  </div>
+  </body>
+</html>
