@@ -3,26 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title>Collatz problem</title>
-    <link rel="stylesheet" href="collatz.css">
-    <link rel="stylesheet" href="rangeslider.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/collatz.css">
+    <link rel="stylesheet" href="css/rangeslider.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/d3.min.js"></script>
     <script src="js/d3.layout.min.js"></script>
     <script src="js/underscore-min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/rangeslider.min.js"></script> 
+    <script src="js/rangeslider.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
-  <h1>Collatz Graph: All Numbers Lead to One</h1>
-  <div id="content">
+  <h1>Collatz problem</h1>
+  <div class="row">
+  <div id="content" class="col-sm-3">
     <div class="slider">
         <br>
-        <input type="range" min="0" max="20">
+        <input type="range" min="1" max="20">
         <br>
         <output></output>
         <br>
         <label>
-          <input type="number" name="min" value="0"> <code>min</code>
+          <input type="number" name="min" value="1"> <code>min</code>
         </label>
         <br>
         <label>
@@ -38,12 +41,14 @@
         <script src="js/rangeslider.work.js"></script>
     </div>
     <p><label for="level">Orbit length</label>: <span id="level"></span> <span id="level-val">1</span>
-    <p><input type="button" value="Play" id="play">
+    <p><input type="button" value="Show plot from slider" id="play">
     <p><input type="button" value="Stop" id="stop" style="display: none">
+    <p><input type="button" value="Animation from 1 to 20" id="animation">
   </div>
-  <div id="vis">
-    <script src="collatz.js"></script>
-    <script src="collatz-ui.js"></script>
+  <div id="vis" class="col-sm-9">
+    <script src="js/collatz.js"></script>
+    <script src="js/collatz-ui.js"></script>
+  </div>
   </div>
   </body>
 </html>
