@@ -11,7 +11,7 @@ var reverseCollatz = function(r, max) {
         // There will only sometimes be an odd multiple of 3 (plus one) above us
         // When (x-1) mod 3 is 0, x is an even number half the time
         // So we check against (x-4) mod 6 because we don't want to find evens
-        var odd = (x-4)%6 ? 0 : (x-1)/3;
+        var odd = ((x-4)%6!=0) ? 0 : (x-1)/3;
         if (odd > 1) { // We don't want 1 (the root) or 0 (no odd found)
           newlevel[odd] = odd;
           results[odd] = x;

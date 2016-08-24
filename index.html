@@ -15,35 +15,28 @@
     <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
-  <h1>Collatz problem</h1>
   <div class="row">
+  <h1>Collatz problem</h1>
   <div id="content" class="col-sm-3">
     <div class="slider">
         <br>
-        <input type="range" min="1" max="20">
+        <input type="range" min="1" max="20"><h3><output id="haha" class="text-primary"></output></h3>
+        <label>Min</label>
+        <input type="number" class="form-control" name="min" value="1">
         <br>
-        <output></output>
+        <label>Max</label>
+        <input type="number" class="form-control" name="max" value="20">
         <br>
-        <label>
-          <input type="number" name="min" value="1"> <code>min</code>
-        </label>
-        <br>
-        <label>
-          <input type="number" name="max" value="20"> <code>max</code>
-        </label>
-        <br>
-        <label>
-          <input type="number" name="step" value="1"> <code>step</code>
-        </label>
+        <label>Step</label>
+        <input type="number" class="form-control" name="step" value="1">
         <br>
         <br>
-        <button id="js-example-change-attributes">Change attributes</button>
+        <button id="js-example-change-attributes" class="btn btn-primary">Change attributes</button>
         <script src="js/rangeslider.work.js"></script>
     </div>
-    <p><label for="level">Orbit length</label>: <span id="level"></span> <span id="level-val">1</span>
-    <p><input type="button" value="Show plot from slider" id="play">
-    <p><input type="button" value="Stop" id="stop" style="display: none">
-    <p><input type="button" value="Animation from 1 to 20" id="animation">
+    <h3><label for="level">Orbit length</label>: <span class="text-primary" id="level-val">1</span></h3>
+    <p><input type="button" class="btn btn-primary btn-lg btn-block" value="Show plot from slider" id="play">
+    <p><input type="button"  class="btn btn-primary btn-lg btn-block" value="Animation from 1 to 20" id="animation">
   </div>
   <div id="vis" class="col-sm-9">
     <script src="js/collatz.js"></script>
