@@ -70,6 +70,9 @@ $(function() {
       else $('#stop').click();
     }, duration);
   }).click();
+
+  //document.getElementsByTagName("svg")[0].onclick=(e)=>[console.log(e.target)];
+  document.getElementsByTagName("svg")[0].onclick=function(e){console.log(e.target)};
 });
 
 

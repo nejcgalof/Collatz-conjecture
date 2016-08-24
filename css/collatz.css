@@ -1,6 +1,12 @@
-.node circle {
-  fill: steelblue;
-  stroke: steelblue;
+.node circle.even {
+  fill: #0074D9;
+  stroke: #0074D9;
+  stroke-width: 1.5px;
+}
+
+.node circle.odd {
+  fill: #7FDBFF;
+  stroke: #7FDBFF;
   stroke-width: 1.5px;
 }
 

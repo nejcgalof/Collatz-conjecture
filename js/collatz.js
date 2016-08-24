@@ -79,7 +79,12 @@ var reverseCollatz = function(r, max) {
             return "translate(" + xs(p) + "," + ys(p) + ")";
           });
       nodeEnter.append("circle")
-          .attr("r", 5);
+          .attr("r", 5)
+          .attr("id",(function(d) { return d.data; }))
+          .attr("class",(function(d) { 
+            if(d.data%2==0){return "even"; }
+            else{return "odd"; }
+           }));
       nodeEnter.append("text")
           .attr("dy", ".31em");
       node.exit().remove();
