@@ -1,5 +1,5 @@
 .node circle {
-  fill: #fff;
+  fill: steelblue;
   stroke: steelblue;
   stroke-width: 1.5px;
 }
@@ -11,14 +11,4 @@
 .link {
   stroke: #ccc;
   stroke-width: 1.5px;
-}
-
-.ui-slider {
-  font-size: 10px;
-  width: 300px;
-  margin-top: 5px;
-}
-
-.ui-state-focus {
-  outline: none;
 }

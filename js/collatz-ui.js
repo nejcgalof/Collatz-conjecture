@@ -71,3 +71,9 @@ $(function() {
     }, duration);
   }).click();
 });
+
+
+
+/*
+document.getElementsByTagName("svg")[0].onclick=(e)=>[console.log(e.target)]
+*/
