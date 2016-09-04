@@ -18,3 +18,13 @@
   stroke: #ccc;
   stroke-width: 1.5px;
 }
+
+#vis{
+  min-height: 500px !important;
+  min-width: 500px !important;
+}
+
+#vis2{
+  min-height: 500px !important;
+  min-width: 50px !important;
+}

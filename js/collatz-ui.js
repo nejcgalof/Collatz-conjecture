@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function(){ 
   var timer = null,
       level = 1,
       max = 20,
@@ -6,9 +6,10 @@ $(function() {
       clientWidth = $(window).width(),
       clientHeight = $(window).height(),
       //clientHeight = document.getElementById('content').clientHeight;
-      r = 700 / 2,
+      r = 600/ 2,
       animation=false,
-      collatz = reverseCollatz(r, max);
+      collatz = reverseCollatz(r, max),
+      path = collatz_path(max,1);
 
 
   var vis = d3.select("#vis")
@@ -17,6 +18,14 @@ $(function() {
       .attr("height", r * 2)
     .append("g")
       .attr("transform", "translate(" + r + "," + r + ")");
+
+   var vis2 = d3.select("#vis2")
+    .append("svg")
+      .attr("width", 25 * 2)
+      .attr("height", 250 * 2)
+      .attr('id','path')
+    .append("g")
+      .attr("transform", "translate(" + 25 + "," + 10 + ")");
 
   function plotLevel() {
     if (level <= max) {
@@ -51,6 +60,7 @@ $(function() {
     $('#play').show();
   });
 */
+
   $('#play').click(function() {
     animation=false;
     level=document.querySelector('output').textContent;
@@ -71,12 +81,10 @@ $(function() {
     }, duration);
   }).click();
 
-  //document.getElementsByTagName("svg")[0].onclick=(e)=>[console.log(e.target)];
-  document.getElementsByTagName("svg")[0].onclick=function(e){console.log(e.target)};
+  document.getElementsByTagName("svg")[0].onclick=function(e){
+    if(e.target.tagName.toLowerCase() === 'circle')
+    {
+      vis2.call(path(e.target.id,1));
+    }
+  };
 });
-
-
-
-/*
-document.getElementsByTagName("svg")[0].onclick=(e)=>[console.log(e.target)]
-*/

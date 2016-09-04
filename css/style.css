@@ -2,10 +2,37 @@
   border: 2px solid black;
 }
 
+#vis2 {
+  /*border: 2px solid blue;*/
+}
+
 .row{
 	padding: 30px;
 }
 
 h3{
 	text-align: center;
+}
+
+rect {
+  fill: none;
+  pointer-events: all;
+}
+
+.node {
+  fill: #000;
+}
+
+.cursor {
+  fill: none;
+  stroke: brown;
+  pointer-events: none;
+}
+
+.link {
+  stroke: #999;
+}
+
+circle {
+ cursor: pointer; 
 }
