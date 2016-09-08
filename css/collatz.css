@@ -1,13 +1,17 @@
-.node circle.even {
+circle.even {
   fill: #0074D9;
   stroke: #0074D9;
   stroke-width: 1.5px;
 }
 
-.node circle.odd {
+circle.odd {
   fill: #7FDBFF;
   stroke: #7FDBFF;
   stroke-width: 1.5px;
+}
+
+.node circle {
+ cursor: pointer; 
 }
 
 .node {
@@ -16,15 +20,15 @@
 
 .link {
   stroke: #ccc;
-  stroke-width: 1.5px;
+  stroke-width: 2.5px;
 }
 
 #vis{
-  min-height: 500px !important;
-  min-width: 500px !important;
+  min-height: 600px !important;
+  min-width: 600px !important;
 }
 
 #vis2{
-  min-height: 500px !important;
+  min-height: 600px !important;
   min-width: 50px !important;
 }

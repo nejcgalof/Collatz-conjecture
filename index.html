@@ -15,36 +15,47 @@
     <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
-  <div class="row">
-  <h1>Collatz problem</h1>
-  <p class="text-primary">By Nejc Galof</p>
-  <div id="content" class="col-sm-3">
-    <div class="slider">
-        <br>
-        <input type="range" min="1" max="20"><h3><output class="text-primary"></output></h3>
-        <label>Min</label>
-        <input type="number" class="form-control" name="min" value="1">
-        <br>
-        <label>Max</label>
-        <input type="number" class="form-control" name="max" value="20">
-        <br>
-        <label>Step</label>
-        <input type="number" class="form-control" name="step" value="1">
-        <br>
-        <br>
-        <button id="js-example-change-attributes" class="btn btn-primary">Change attributes</button>
-        <script src="js/rangeslider.work.js"></script>
+    <div id="row" class="col-sm-12">
+      <div id="content" class="col-sm-3">
+        <h1 class="text-center">Collatz problem</h1>
+        <p class="text-primary text-center">By Nejc Galof</p>
+        <div id="intro" class="">
+          <p>Graph showing the orbits of all numbers under the Collatz map with an orbit length of 19 or less.</p>
+          <p>The Collatz conjecture is as follows:</p>
+          <div class="media">
+            <div id="even-example" class="media-left">
+            </div>
+            <div class="media-body">
+              <p>Number is even, divide it by 2.</p>
+            </div>
+          </div>
+          <div class="media">
+            <div id="odd-example" class="media-left">
+            </div>
+            <div class="media-body">
+              <p>Number is odd. Multiply it by 3 and add 1.</p>
+            </div>
+          </div>
+          <p>Repeat indefinitely. <br>
+          Click the circle for showing sequence for that number, or input your own number.
+          </p>
+        </div>
+        <div class="slider">
+          <br>
+          <input type="range" min="1" max="20"><h3><output class="text-primary text-center"></output></h3>
+          <script src="js/rangeslider.work.js"></script>
+        </div>
+        <h3 class="text-center"><label for="level">Orbit length</label>: <span class="text-primary" id="level-val">1</span></h3>
+        <p><input type="button" class="btn btn-primary btn-lg btn-block" value="Show plot from slider" id="play"></p>
+        <p><input type="button"  class="btn btn-primary btn-lg btn-block" value="Animation from 1 to 20" id="animation"></p>
+      </div>
+      <div id="vis" class="col-sm-8 text-center">
+        <script src="js/collatz.js"></script>
+        <script src="js/collatz-ui.js"></script>
+      </div>
+      <div id="vis2" class="col-sm-1 text-center">
+        <script src="js/collatz_path.js"></script>
+      </div>
     </div>
-    <h3><label for="level">Orbit length</label>: <span class="text-primary" id="level-val">1</span></h3>
-    <p><input type="button" class="btn btn-primary btn-lg btn-block" value="Show plot from slider" id="play">
-    <p><input type="button"  class="btn btn-primary btn-lg btn-block" value="Animation from 1 to 20" id="animation">
-  </div>
-  <div id="vis" class="col-sm-8 text-center">
-    <script src="js/collatz.js"></script>
-    <script src="js/collatz-ui.js"></script>
-  </div>
-  <div id="vis2" class="col-sm-1 text-center vcenter">
-    <script src="js/collatz_path.js"></script>
-  </div>
   </body>
 </html>

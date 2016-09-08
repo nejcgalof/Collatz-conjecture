@@ -3,10 +3,7 @@ $(document).ready(function(){
       level = 1,
       max = 20,
       duration = 1000,
-      clientWidth = $(window).width(),
-      clientHeight = $(window).height(),
-      //clientHeight = document.getElementById('content').clientHeight;
-      r = 600/ 2,
+      r = 600 / 2,
       animation=false,
       collatz = reverseCollatz(r, max),
       path = collatz_path(max,1);
@@ -22,10 +19,30 @@ $(document).ready(function(){
    var vis2 = d3.select("#vis2")
     .append("svg")
       .attr("width", 25 * 2)
-      .attr("height", 250 * 2)
+      .attr("height", 300 * 2)
       .attr('id','path')
     .append("g")
-      .attr("transform", "translate(" + 25 + "," + 10 + ")");
+      .attr("transform", "translate(" + 25 + "," + 50 + ")");
+
+    var example_even = d3.select("#even-example")
+    .append("svg")
+      .attr("width", 12)
+      .attr("height", 12)
+    .append("g")
+      .attr("transform", "translate(" + 6 + "," + 6 + ")")
+    .append("circle")
+      .attr("r", 5)
+      .attr("class","even");
+      
+    var example_odd = d3.select("#odd-example")
+    .append("svg")
+      .attr("width", 12)
+      .attr("height", 12)
+    .append("g")
+      .attr("transform", "translate(" + 6 + "," + 6 + ")")
+    .append("circle")
+      .attr("r", 5)
+      .attr("class","odd");
 
   function plotLevel() {
     if (level <= max) {
@@ -81,7 +98,7 @@ $(document).ready(function(){
     }, duration);
   }).click();
 
-  document.getElementsByTagName("svg")[0].onclick=function(e){
+  document.getElementsByTagName("svg")[2].onclick=function(e){
     if(e.target.tagName.toLowerCase() === 'circle')
     {
       vis2.call(path(e.target.id,1));

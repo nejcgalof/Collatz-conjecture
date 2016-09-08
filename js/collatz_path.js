@@ -45,7 +45,15 @@ var collatz_path = function(num, duration) {
     		numbers={};
     		oldNodes1 = {};
     		var k= d3.select("#path");
-    		k.select("g.parent").selectAll("*").remove();
+    		//k.select("g.parent").selectAll("*").empty();
+    		var h=document.getElementById('path').firstChild;
+    		/*while (h.firstChild) {
+    			h.removeChild(h.firstChild);	
+			}*/
+			/*while (h.hasChildNodes()) {
+    			h.removeChild(h.lastChild);
+			}*/
+			$(h).contents().remove();
     		var n=num;
 			var f=n;
 			f = (f % 2 == 0) ? f / 2 : f * 3 + 1;
@@ -62,7 +70,7 @@ var collatz_path = function(num, duration) {
 			    count++;
 			  }
 			}
-			console.log(numbers);
+
 			var vis = this,
 			nodes = tree1.children(treeChildren1(count))(1);
 
