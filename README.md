@@ -14,7 +14,7 @@ Does the Collatz sequence eventually reach 1 for all positive integer initial va
 - D3 library (tree)
 
 ##To do...
-Resizable sequences path for big input numbers.
+- [ ] Resizable sequences path for big input numbers
 
 ##For understanding
 [Wikipedia](https://en.wikipedia.org/wiki/Collatz_conjecture)
