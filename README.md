@@ -6,6 +6,13 @@ Open [page](https://nejcgalof.github.io/Collatz-conjecture/) and research unsolv
 
 Does the Collatz sequence eventually reach 1 for all positive integer initial values?
 
+##Using
+- javascript
+- jQuery
+- HTML
+- CSS
+- D3 library (tree)
+
 ##To do...
 Resizable sequences path for big input numbers.
 
