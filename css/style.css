@@ -2,18 +2,16 @@
 	margin-top: 30px;
 }
 
-#vis2 {
-	margin-top: 30px;
-  /*border: 2px solid blue;*/
-}
-
 rect {
-  fill: none;
-  pointer-events: all;
+	fill: none;
+	pointer-events: all;
 }
 
 .node {
-  fill: #000;
+	fill: #000;
 }
 
+output{
+	margin: -15px;
+}
 

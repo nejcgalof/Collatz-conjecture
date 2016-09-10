@@ -26,24 +26,12 @@ var reverseCollatz = function(r, max) {
       if (!index[v]) index[v] = [x];
       else index[v].push(x);
     }
-    //console.log(index);
     return index;
   }
 
-  var zaza=1;
   function treeChildren(max) {
     return function(d, i) {
-           // console.log(d,i);
-
-      if(i<max){
-        zaza=index[d];
-      }
-      else{
-        zaza=null;
-      }
-      //return i < max ? index[d] : null;
-      //console.log(zaza);
-      return zaza;
+      return i < max ? index[d] : null;
     };
   }
 
@@ -57,14 +45,10 @@ var reverseCollatz = function(r, max) {
   var oldNodes = {};
 
   function plot(depth, duration) {
-    //alert("caller is " + arguments.callee.caller.toString());
     return function() {
-      //console.log('start');
-      //console.log(index);
       var vis = this,
           nodes = tree.children(treeChildren(depth - 1))(1);
-      //console.log(vis);
-          //console.log(nodes);
+
       var link = vis.selectAll("g.link")
           .data(nodes, function(d) { return d.data; });
 
@@ -108,6 +92,7 @@ var reverseCollatz = function(r, max) {
       node.transition()
           .duration(duration)
           .attr("transform", function(d) { return "translate(" + xs(d) + "," + ys(d) + ")"; });
+          //if we want add text
       /*node.select("text")
           .attr("text-anchor", function(d) { return d.x <= 270 && d.x >= 90 ? "start" : "end"; })
           .attr("transform", function(d) {
@@ -118,7 +103,6 @@ var reverseCollatz = function(r, max) {
         .transition()
           .duration(duration)
           .attr("transform", function(d) { return "rotate(" + (d.x > 270 || d.x < 90 ? d.x : d.x - 180) + ")translate(" + toffset(d) + ")"; });*/
-
       oldNodes = {};
       _.each(nodes, function(node) {
         oldNodes[node.data] = node;

@@ -19,7 +19,7 @@ $element.rangeslider({
 });
 
 // Example functionality to demonstrate programmatic attribute changes
-$document.on('click', '#js-example-change-attributes', function(e) {
+/*$document.on('click', '#js-example-change-attributes', function(e) {
   var attributes = {
     min: $min[0].value,
     max: $max[0].value,
@@ -30,4 +30,4 @@ $document.on('click', '#js-example-change-attributes', function(e) {
 
   // pass updated attributes to rangeslider.js
   $element.rangeslider('update', true);
-});
+});*/

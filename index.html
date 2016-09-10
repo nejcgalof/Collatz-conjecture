@@ -1,61 +1,77 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Collatz problem</title>
-    <link rel="stylesheet" href="css/collatz.css">
-    <link rel="stylesheet" href="css/rangeslider.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/d3.min.js"></script>
-    <script src="js/d3.layout.min.js"></script>
-    <script src="js/underscore-min.js"></script>
-    <script src="js/rangeslider.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    <div id="row" class="col-sm-12">
-      <div id="content" class="col-sm-3">
-        <h1 class="text-center">Collatz problem</h1>
-        <p class="text-primary text-center">By Nejc Galof</p>
-        <div id="intro" class="">
-          <p>Graph showing the orbits of all numbers under the Collatz map with an orbit length of 19 or less.</p>
-          <p>The Collatz conjecture is as follows:</p>
-          <div class="media">
-            <div id="even-example" class="media-left">
-            </div>
-            <div class="media-body">
-              <p>Number is even, divide it by 2.</p>
-            </div>
+<head>
+  <meta charset="utf-8">
+  <title>Collatz problem</title>
+  <link rel="stylesheet" href="css/collatz.css">
+  <link rel="stylesheet" href="css/rangeslider.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/d3.min.js"></script>
+  <script src="js/d3.layout.min.js"></script>
+  <script src="js/underscore-min.js"></script>
+  <script src="js/rangeslider.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div id="row" class="col-sm-12">
+    <div id="content" class="col-sm-3">
+      <h1 class="text-center">Collatz problem</h1>
+      <p class="text-primary text-center">By Nejc Galof</p>
+      <div id="intro" class="text-justify">
+        <p>The Collatz conjecture is as follows:</p>
+        <div class="media">
+          <div id="even-example" class="media-left">
           </div>
-          <div class="media">
-            <div id="odd-example" class="media-left">
-            </div>
-            <div class="media-body">
-              <p>Number is odd. Multiply it by 3 and add 1.</p>
-            </div>
+          <div class="media-body">
+            Number is even, divide it by two.
           </div>
-          <p>Repeat indefinitely. <br>
-          Click the circle for showing sequence for that number, or input your own number.
-          </p>
         </div>
-        <div class="slider">
-          <br>
-          <input type="range" min="1" max="20"><h3><output class="text-primary text-center"></output></h3>
-          <script src="js/rangeslider.work.js"></script>
+        <div class="media">
+          <div id="odd-example" class="media-left">
+          </div>
+          <div class="media-body">
+            Number is odd, triple it and add one.
+          </div>
         </div>
-        <h3 class="text-center"><label for="level">Orbit length</label>: <span class="text-primary" id="level-val">1</span></h3>
-        <p><input type="button" class="btn btn-primary btn-lg btn-block" value="Show plot from slider" id="play"></p>
-        <p><input type="button"  class="btn btn-primary btn-lg btn-block" value="Animation from 1 to 20" id="animation"></p>
+        <p><br>
+          The conjecture always reach 1, no matter what number you start with.<br>
+          Graph showing the orbits of all numbers under the Collatz map with an orbit length of 20 or less.<br>
+          Click the circle for showing sequence for number or input your own number (2 or more).
+        </p>
       </div>
-      <div id="vis" class="col-sm-8 text-center">
-        <script src="js/collatz.js"></script>
-        <script src="js/collatz-ui.js"></script>
-      </div>
-      <div id="vis2" class="col-sm-1 text-center">
-        <script src="js/collatz_path.js"></script>
+      <div class="input-group">
+       <input type="number" id="input_number" min="2" step="1" class="form-control">
+       <span class="input-group-btn">
+         <button id="input_button" class="btn btn-primary" type="button">Show sequence</button>
+       </span>
+     </div>
+     <div class="slider">
+      <br>
+      <input type="range" min="1" max="20">
+      <h3><output class="text-primary text-center"></output></h3>
+      <script src="js/rangeslider.work.js"></script>
+    </div>
+    <h3 class="text-center"><label for="level">Orbit length</label>: <span class="text-primary" id="level-val">1</span></h3>
+    <p><input type="button" class="btn btn-primary btn-lg btn-block" value="Show plot from slider" id="play"></p>
+    <p><input type="button"  class="btn btn-primary btn-lg btn-block" value="Animation from 1 to 20" id="animation"></p>
+    <div id="links" class="text-center">
+      <div class="small">
+        Source:
+        <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" target="_blank">Wikipedia</a>
+        and 
+        <a href="http://mathworld.wolfram.com/CollatzProblem.html" target="_blank">Wolfram</a>
       </div>
     </div>
-  </body>
+  </div>
+  <div id="vis" class="col-sm-8 text-center">
+    <script src="js/collatz.js"></script>
+    <script src="js/collatz-ui.js"></script>
+  </div>
+  <div id="vis2" class="col-sm-1 text-center">
+    <script src="js/collatz_path.js"></script>
+  </div>
+</div>
+</body>
 </html>
